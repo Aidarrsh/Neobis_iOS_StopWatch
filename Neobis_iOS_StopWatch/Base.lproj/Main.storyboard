@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="21507" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_12" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="21505"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +10,131 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Neobis_iOS_StopWatch" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" xcode11CocoaTouchSystemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timer" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="eNC-GN-pXx">
+                                <rect key="frame" x="105" y="86" width="182" height="83"/>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="84.670000000000002" id="lKE-30-Mbf"/>
+                                    <constraint firstAttribute="width" constant="182" id="w2b-Hw-NQb"/>
+                                </constraints>
+                            </imageView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="x1N-2R-qik">
+                                <rect key="frame" x="111" y="190" width="171" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="31" id="ceu-gb-uFd"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="Timer"/>
+                                    <segment title="Stopwatch"/>
+                                </segments>
+                                <connections>
+                                    <action selector="didChangeSegment:" destination="BYZ-38-t0r" eventType="valueChanged" id="i4O-UN-SQX"/>
+                                </connections>
+                            </segmentedControl>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="751" text="00:00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xag-MS-Sd3">
+                                <rect key="frame" x="49" y="261" width="295" height="73"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="61"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="If2-Ao-9Lj">
+                                <rect key="frame" x="60" y="569" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="G2m-kI-eZm"/>
+                                    <constraint firstAttribute="height" constant="75" id="IlX-GV-Svv"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="StopButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="bb9-Ho-sEN"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="fill" contentVerticalAlignment="fill" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gtu-JA-xei">
+                                <rect key="frame" x="159" y="569" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="OzK-G0-mRT"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="uhb-dI-JTA"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="PauseButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="c5w-Us-cfY"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" verticalCompressionResistancePriority="751" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="noh-Am-MXY">
+                                <rect key="frame" x="258" y="569" width="75" height="75"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="75" id="B5Q-yf-216"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="75" id="Npn-iJ-YiQ"/>
+                                </constraints>
+                                <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain">
+                                    <backgroundConfiguration key="background"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="PlayButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xbX-Ld-vax"/>
+                                </connections>
+                            </button>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nBJ-H6-278">
+                                <rect key="frame" x="0.0" y="345" width="393" height="162"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            </pickerView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                        <color key="backgroundColor" red="0.96862745289999996" green="0.8078432083" blue="0.27450981740000002" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                        <constraints>
+                            <constraint firstItem="eNC-GN-pXx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25.670000000000002" id="4Sh-7K-JGb"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xag-MS-Sd3" secondAttribute="trailing" constant="49" id="5LQ-YI-9Qt"/>
+                            <constraint firstItem="noh-Am-MXY" firstAttribute="height" secondItem="If2-Ao-9Lj" secondAttribute="height" id="BEO-Ge-IGA"/>
+                            <constraint firstItem="gtu-JA-xei" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Fdu-nI-1xJ"/>
+                            <constraint firstItem="gtu-JA-xei" firstAttribute="leading" secondItem="If2-Ao-9Lj" secondAttribute="trailing" constant="24" id="FiI-jm-sEm"/>
+                            <constraint firstItem="noh-Am-MXY" firstAttribute="leading" secondItem="gtu-JA-xei" secondAttribute="trailing" constant="24" id="H6F-eG-zjy"/>
+                            <constraint firstItem="xag-MS-Sd3" firstAttribute="top" secondItem="x1N-2R-qik" secondAttribute="bottom" constant="40" id="Ia6-wv-PFN"/>
+                            <constraint firstItem="gtu-JA-xei" firstAttribute="height" secondItem="If2-Ao-9Lj" secondAttribute="height" id="OGh-6r-tz2"/>
+                            <constraint firstItem="gtu-JA-xei" firstAttribute="top" secondItem="xag-MS-Sd3" secondAttribute="bottom" constant="235" id="SJ6-or-loU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="eNC-GN-pXx" secondAttribute="trailing" constant="106" id="TQO-dZ-F5c"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="gtu-JA-xei" secondAttribute="bottom" constant="174" id="UWr-Bh-PkM"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="If2-Ao-9Lj" secondAttribute="bottom" constant="174" id="YTX-UD-Y8g"/>
+                            <constraint firstItem="noh-Am-MXY" firstAttribute="top" secondItem="xag-MS-Sd3" secondAttribute="bottom" constant="235" id="ZWc-rZ-Yrn"/>
+                            <constraint firstItem="If2-Ao-9Lj" firstAttribute="top" secondItem="xag-MS-Sd3" secondAttribute="bottom" constant="235" id="aJY-Q7-Edk"/>
+                            <constraint firstItem="x1N-2R-qik" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="111" id="bUX-wd-hDZ"/>
+                            <constraint firstItem="eNC-GN-pXx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="105" id="cfj-pT-YeH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="x1N-2R-qik" secondAttribute="trailing" constant="111" id="jUY-O9-DWP"/>
+                            <constraint firstItem="xag-MS-Sd3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="49" id="mH1-24-C9a"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="noh-Am-MXY" secondAttribute="trailing" constant="60" id="pVz-Pd-rEp"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="noh-Am-MXY" secondAttribute="bottom" constant="174" id="pcP-8u-rta"/>
+                            <constraint firstItem="If2-Ao-9Lj" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="60" id="tf1-ey-ufo"/>
+                            <constraint firstItem="x1N-2R-qik" firstAttribute="top" secondItem="eNC-GN-pXx" secondAttribute="bottom" constant="20.670000000000002" id="wjC-gF-Cqw"/>
+                            <constraint firstItem="gtu-JA-xei" firstAttribute="width" secondItem="If2-Ao-9Lj" secondAttribute="width" id="xxE-hu-nO4"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="Image" destination="eNC-GN-pXx" id="eSw-Og-ese"/>
+                        <outlet property="PauseButton" destination="gtu-JA-xei" id="d4Q-n6-9od"/>
+                        <outlet property="PlayButton" destination="noh-Am-MXY" id="M8P-zH-KJD"/>
+                        <outlet property="StopButton" destination="If2-Ao-9Lj" id="YBj-cA-Lhk"/>
+                        <outlet property="TimeLabel" destination="xag-MS-Sd3" id="bwm-fO-1vg"/>
+                        <outlet property="pickerView" destination="nBJ-H6-278" id="t5v-Tc-jRA"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="93.89312977099236" y="-27.464788732394368"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="timer" catalog="system" width="128" height="123"/>
+    </resources>
 </document>
