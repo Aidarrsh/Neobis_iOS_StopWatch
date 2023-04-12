@@ -102,14 +102,19 @@ class ViewController: UIViewController {
         PauseButton.imageView?.contentMode = .scaleAspectFit
         playButtonPressed = true
         
-        if let stop = stopTime{
-            let restartTime = calcRestartTime(start: startTime!, stop: stop)
-            setStopTime(date: nil)
-            setStartTime(date: restartTime)
+        if timerCounting {
+            setStopTime(date: Date())
+            stopTimer()
         } else {
-            setStartTime(date: Date())
+            if let stop = stopTime{
+                let restartTime = calcRestartTime(start: startTime!, stop: stop)
+                setStopTime(date: nil)
+                setStartTime(date: restartTime)
+            } else {
+                setStartTime(date: Date())
+            }
+            startTimer()
         }
-        startTimer()
     }
     
     func calcRestartTime(start: Date, stop: Date) -> Date{
@@ -174,7 +179,6 @@ class ViewController: UIViewController {
         PlayButton.setImage(playImage?.withTintColor(.black, renderingMode: .alwaysOriginal), for: .normal)
         PlayButton.imageView?.contentMode = .scaleAspectFit
         pauseButtonPressed = true
-        stopTimer()
     }
     
     @IBAction func StopButtonAction(_ sender: UIButton) {
@@ -191,7 +195,6 @@ class ViewController: UIViewController {
         setStopTime(date: nil)
         setStartTime(date: nil)
         TimeLabel.text = makeTimeString(hour: 0, min: 0, sec: 0)
-        setStopTime(date: Date())
         stopTimer()
     }
     
