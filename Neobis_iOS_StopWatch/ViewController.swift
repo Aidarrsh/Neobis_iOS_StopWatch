@@ -311,21 +311,23 @@ class ViewController: UIViewController {
     
     @IBAction func StopButtonAction(_ sender: UIButton) {
         
-        imagesSetToDef()
-        stopButtonPressed = true
-        
-        if segmentControl == true {
-            stopCountTimer()
-            hour = pickerView.selectedRow(inComponent: 0)
-            minutes = pickerView.selectedRow(inComponent: 1)
-            seconds = pickerView.selectedRow(inComponent: 2)
-            setTimeLabel()
-            setStopTime(date: nil)
+        if timerCounting{
+            imagesSetToDef()
+            stopButtonPressed = true
+            
+            if segmentControl == true {
+                stopCountTimer()
+                hour = pickerView.selectedRow(inComponent: 0)
+                minutes = pickerView.selectedRow(inComponent: 1)
+                seconds = pickerView.selectedRow(inComponent: 2)
+                setTimeLabel()
+                setStopTime(date: nil)
+            }
+            
+            resetTimer()
+            playButtonPressed = false
+            stopButtonPressed = false
         }
-        
-        resetTimer()
-        playButtonPressed = false
-        stopButtonPressed = false
     }
     
     @IBAction func didChangeSegment(_ sender: UISegmentedControl){
