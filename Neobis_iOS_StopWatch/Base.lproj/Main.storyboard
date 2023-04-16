@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="timer" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="eNC-GN-pXx">
-                                <rect key="frame" x="105" y="86" width="182" height="83"/>
+                                <rect key="frame" x="105" y="85.666666666666671" width="182" height="83.333333333333329"/>
                                 <color key="tintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="84.670000000000002" id="lKE-30-Mbf"/>
@@ -87,9 +87,8 @@
                                     <action selector="PlayButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="xbX-Ld-vax"/>
                                 </connections>
                             </button>
-                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nBJ-H6-278">
-                                <rect key="frame" x="0.0" y="345" width="393" height="162"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                            <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nBJ-H6-278">
+                                <rect key="frame" x="37" y="345" width="320" height="216"/>
                             </pickerView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
@@ -98,8 +97,10 @@
                             <constraint firstItem="eNC-GN-pXx" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="25.670000000000002" id="4Sh-7K-JGb"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="xag-MS-Sd3" secondAttribute="trailing" constant="49" id="5LQ-YI-9Qt"/>
                             <constraint firstItem="noh-Am-MXY" firstAttribute="height" secondItem="If2-Ao-9Lj" secondAttribute="height" id="BEO-Ge-IGA"/>
+                            <constraint firstItem="nBJ-H6-278" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="37" id="C54-hP-aKX"/>
                             <constraint firstItem="gtu-JA-xei" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="Fdu-nI-1xJ"/>
                             <constraint firstItem="gtu-JA-xei" firstAttribute="leading" secondItem="If2-Ao-9Lj" secondAttribute="trailing" constant="24" id="FiI-jm-sEm"/>
+                            <constraint firstItem="nBJ-H6-278" firstAttribute="top" secondItem="xag-MS-Sd3" secondAttribute="bottom" constant="11" id="Fks-RG-8i0"/>
                             <constraint firstItem="noh-Am-MXY" firstAttribute="leading" secondItem="gtu-JA-xei" secondAttribute="trailing" constant="24" id="H6F-eG-zjy"/>
                             <constraint firstItem="xag-MS-Sd3" firstAttribute="top" secondItem="x1N-2R-qik" secondAttribute="bottom" constant="40" id="Ia6-wv-PFN"/>
                             <constraint firstItem="gtu-JA-xei" firstAttribute="height" secondItem="If2-Ao-9Lj" secondAttribute="height" id="OGh-6r-tz2"/>
@@ -111,6 +112,7 @@
                             <constraint firstItem="If2-Ao-9Lj" firstAttribute="top" secondItem="xag-MS-Sd3" secondAttribute="bottom" constant="235" id="aJY-Q7-Edk"/>
                             <constraint firstItem="x1N-2R-qik" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="111" id="bUX-wd-hDZ"/>
                             <constraint firstItem="eNC-GN-pXx" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="105" id="cfj-pT-YeH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="nBJ-H6-278" secondAttribute="trailing" constant="36" id="eUN-g6-DM9"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="x1N-2R-qik" secondAttribute="trailing" constant="111" id="jUY-O9-DWP"/>
                             <constraint firstItem="xag-MS-Sd3" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="49" id="mH1-24-C9a"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="noh-Am-MXY" secondAttribute="trailing" constant="60" id="pVz-Pd-rEp"/>
@@ -126,7 +128,7 @@
                         <outlet property="PlayButton" destination="noh-Am-MXY" id="M8P-zH-KJD"/>
                         <outlet property="StopButton" destination="If2-Ao-9Lj" id="YBj-cA-Lhk"/>
                         <outlet property="TimeLabel" destination="xag-MS-Sd3" id="bwm-fO-1vg"/>
-                        <outlet property="pickerView" destination="nBJ-H6-278" id="t5v-Tc-jRA"/>
+                        <outlet property="pickerView" destination="nBJ-H6-278" id="OAs-M3-AUv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
