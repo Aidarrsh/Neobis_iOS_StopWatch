@@ -311,7 +311,7 @@ class ViewController: UIViewController {
     
     @IBAction func StopButtonAction(_ sender: UIButton) {
         
-        if timerCounting{
+        if timerCounting || pauseButtonPressed == true{
             imagesSetToDef()
             stopButtonPressed = true
             
